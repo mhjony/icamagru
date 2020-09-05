@@ -20,20 +20,20 @@ function sendVerificationEmail($email, $token)
     // }
 
 
-    
-    // $from = new SendGrid\Email(null, "admin@example.com");
-    // $subject = "Verify email!";
-    // $to = new SendGrid\Email(null, $email);
-    // $content = new SendGrid\Content("text/plain", $body);
-    // $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-    // $apiKey = getenv('SENDGRID_API_KEY');
-    // $sg = new \SendGrid($apiKey);
+    $from = new SendGrid\Email(null, "admin@example.com");
+    $subject = "Verify email!";
+    $to = new SendGrid\Email(null, $email);
+    $content = new SendGrid\Content("text/plain", $body);
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-    // $response = $sg->client->mail()->send()->post($mail);
-    // echo $response->statusCode();
-    // echo $response->headers();
-    // echo $response->body();
+    $apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    echo $response->headers();
+    echo $response->body();
 
 
 }
