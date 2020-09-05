@@ -1,9 +1,14 @@
 <?php
 
-$DB_DSN = "mysql:dbname=camagru;host=127.0.0.1";
-$DB_USER = "root";
-$DB_PASSWORD = "123456";
-$DB_DSN_NO_DB = "mysql:host=127.0.0.1";
+// $DB_DSN = "mysql:dbname=camagru;host=127.0.0.1";
+// $DB_USER = "root";
+// $DB_PASSWORD = "123456";
+// $DB_DSN_NO_DB = "mysql:host=127.0.0.1";
+
+$DB_DSN = "mysql:dbname=camagru;host=https://test-camagru.herokuapp.com/";
+$DB_USER = "ba720a4856594e";
+$DB_PASSWORD = "91a05ca5";
+$DB_DSN_NO_DB = "mysql:host=https://test-camagru.herokuapp.com/";
 
 try
 {
