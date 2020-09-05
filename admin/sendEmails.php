@@ -2,6 +2,8 @@
 
 function sendVerificationEmail($email, $token)
 {
+    echo $email;
+    echo $token;
     $body = '
         Thanks for sign up in our application
         Click the following link in order to complete your signup process:
