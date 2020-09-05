@@ -4,7 +4,7 @@
 // $DB_PASSWORD = "123456";
 // $DB_NAME = "camagru";
 
-$DB_DSN = "https://test-camagru.herokuapp.com/";
+$DB_DSN = "eu-cdbr-west-03.cleardb.net";
 $DB_USER = "ba720a4856594e";
 $DB_PASSWORD = "91a05ca5";
 $DB_NAME = "camagru";
