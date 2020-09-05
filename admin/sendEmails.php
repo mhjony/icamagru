@@ -1,5 +1,8 @@
 <?php
 
+require 'vendor/autoload.php';
+
+
 function sendVerificationEmail($email, $token)
 {
     $body = '
@@ -15,36 +18,20 @@ function sendVerificationEmail($email, $token)
     // } else {
     //     echo "Message Error";
     // }
-    require_once "Mail.php";
+    $from = new SendGrid\Email(null, "admin@example.com");
+    $subject = "Verify email!";
+    $to = new SendGrid\Email(null, $email);
+    $content = new SendGrid\Content("text/plain", $body);
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-    $from = 'mahmudul.jhony@gmail.com'; //change this to your email address
-    $to = $email; // change to address
-    $subject = 'Insert subject here'; // subject of mail
-    // $body = "Hello world! this is the content of the email"; //content of mail
+    $apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
 
-    $headers = array(
-        'From' => $from,
-        'To' => $to,
-        'Subject' => $subject
-    );
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    echo $response->headers();
+    echo $response->body();
 
-    $smtp = Mail::factory('smtp', array(
-            'host' => 'smtp.gmail.com',
-            'port' => 465,
-            'auth' => true,
-            'username' => 'jhony.mbstu@gmail.com', //your gmail account
-            'password' => '01722904691' // your password
-        ));
-
-    // Send the mail
-    $mail = $smtp->send($to, $headers, $body);
-
-    //check mail sent or not
-    if (PEAR::isError($mail)) {
-        echo '<p>'.$mail->getMessage().'</p>';
-    } else {
-        echo '<p>Message successfully sent!</p>';
-    }
 
 }
 
