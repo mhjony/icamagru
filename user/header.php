@@ -79,10 +79,10 @@ body {
 	<?php if ($_SESSION['user'] != NULL) { ?>
 		<a href="../user/logout.php">Log out</a>
 	<?php } else { ?>
-		<a href="Login_page.php">Log in</a>
+		<a href="login_page.php">Log in</a>
   <?php } ?>
   <?php if ($_SESSION['user'] == NULL) { ?>
-    <a href="user/signup.php">Sign up</a>
+    <a href="/user/signup.php">Sign up</a>
   <?php } ?>
 	
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
