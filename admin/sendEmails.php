@@ -1,6 +1,6 @@
 <?php
 
-//require 'vendor/autoload.php';
+require("../sendgrid-php/sendgrid-php.php");
 
 function sendVerificationEmail($email, $token)
 {
