@@ -1,7 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
-
+//require 'vendor/autoload.php';
 
 function sendVerificationEmail($email, $token)
 {
@@ -34,8 +33,6 @@ function sendVerificationEmail($email, $token)
     echo $response->statusCode();
     echo $response->headers();
     echo $response->body();
-
-
 }
 
 
