@@ -29,7 +29,7 @@ if (isset($_POST['submit']))
 					'user_id' => $user['user_id']
 				);
 				$_SESSION['user'] = $user;
-				header('location: ../camagru/user/userHome.php');
+				header('location: ../user/userHome.php');
 				die();
 			}
 			else
