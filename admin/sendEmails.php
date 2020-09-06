@@ -7,7 +7,7 @@ function sendVerificationEmail($email, $token)
     $body = '
         Thanks for sign up in our application
         Click the following link in order to complete your signup process:
-      http://localhost:8080/camagru/admin/verificationEmail.php?token=' . $token . '';
+        https://test-camagru.herokuapp.com/admin/verificationEmail.php?token=' . $token . '';
     // $headers = "From: Admin\r\n";
     // Send the message
     // if (mail($email, "Verify your email", $body, $headers)) {
