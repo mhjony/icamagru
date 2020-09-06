@@ -1,7 +1,7 @@
 <?php
 //require_once '../config/database.php';
 require_once 'inputValidate.php';
-require_once '../admin/sendEmails.php';
+//require_once '../admin/sendEmails.php';
 require_once 'dbConnectionNew.php';
 
 session_start();
