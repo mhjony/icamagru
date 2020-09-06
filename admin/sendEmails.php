@@ -20,7 +20,7 @@ function sendVerificationEmail($email, $token)
 
 
 
-    $from = new SendGrid\Email(null, "admin@example.com");
+    $from = new SendGrid\Email(null, "jhony.mbstu@gmail.com");
     $subject = "Verify email!";
     $to = new SendGrid\Email(null, $email);
     $content = new SendGrid\Content("text/plain", $body);
