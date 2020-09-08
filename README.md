@@ -30,6 +30,7 @@ Camagru, allows users to upload/capture photos with webcam and apply filters to 
 1. Comment on photos <br />
 2. Like or unlike photos <br />
 3. Delete user own photo. <br />
+4. Pagination
 
 # Photo capturing features
 1. Allow user to capture photos by webcam <br />
