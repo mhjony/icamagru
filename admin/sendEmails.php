@@ -30,9 +30,13 @@ function sendVerificationEmail($email, $token)
     $sg = new \SendGrid($apiKey);
 
     $response = $sg->client->mail()->send()->post($mail);
-    echo $response->statusCode();
-    echo $response->headers();
-    echo $response->body();
+    if ($response){
+        echo '<script type="text/JavaScript">  
+        alert("A confirmation email has been sent to your email"); 
+         </script>';
+    }else{
+        echo "Confirmation email could be sent";
+    }
 }
 
 
