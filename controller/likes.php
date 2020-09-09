@@ -15,16 +15,10 @@ $likes = $con->prepare("SELECT * FROM likes WHERE `image_id`=$id AND `user_id`=$
 $likes->execute();
 $row = $likes->fetch();
 
-// $stmt = $con->prepare("SELECT * FROM tbl_comment WHERE `image_id`=$id");
-// $stmt->execute();
-// $Allcomments = $stmt->fetchAll();
-
 $com_query = $con->prepare("SELECT users.name AS name, tbl_comment.comment FROM `users` JOIN tbl_comment on tbl_comment.user_id = users.user_id WHERE tbl_comment.image_id =?");
 $com_query->execute([$id]);
 $Allcomments = $com_query->fetchAll();
-
 ?>
-
 
 <!DOCTYPE html>
 <html>

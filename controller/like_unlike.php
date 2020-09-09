@@ -2,7 +2,6 @@
 session_start();
 include '../config/dbConnectionNew.php';
 
-
 if($_POST['submit'] == "Like"){
 	$userId = $_SESSION['user']['user_id'];
 	$id = $_GET['imageid'];

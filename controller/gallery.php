@@ -34,10 +34,6 @@ if (isset($_GET['page']))
 }
 $start_limit = ($page - 1) * $images_per_page;
 
-// $results = $con->prepare("SELECT * FROM images ORDER BY id DESC LIMIT " . $start_limit . ',' . $images_per_page);
-// $results->execute();
-// $images = $results->fetchAll();
-
 $results = $con->prepare("SELECT users.username, images.image, images.id FROM users JOIN images ON images.user_id = users.user_id ORDER BY id DESC LIMIT " . $start_limit . ',' . $images_per_page);
 $results->execute();
 $images = $results->fetchAll();
@@ -53,54 +49,7 @@ $images = $results->fetchAll();
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<style>
-		.column {
-			float: left;
-			width: 33.33%;
-			padding: 5px;
-		}
-
-		/* Clear floats after image containers */
-		.row::after {
-			content: "";
-			clear: both;
-			display: table;
-		}
-
-		.pagination {
-			display: inline-flex;
-			padding-left: 0;
-			/* margin: 20px 0; */
-			border-radius: 4px;
-
-		}
-
-		.pagination a {
-			background: rgba(0, 0, 0, 0.4);
-			margin-left: 50%;
-			color: black;
-			float: left;
-			padding: 8px 16px;
-			text-decoration: none;
-			transition: background-color .3s;
-			border: 1px solid #ddd;
-		}
-
-		.pagination a.active {
-			background-color: #4CAF50;
-			color: white;
-			border: 1px solid #4CAF50;
-		}
-
-		.pagination a:hover:not(.active) {
-			background-color: #ddd;
-		}
-		img {
-			max-width: 100%;
-			max-height: 100%;
-		}
-	</style>
+	<link rel="stylesheet" href="../css/gallery.css">
 </head>
 
 <body>
@@ -129,7 +78,8 @@ $images = $results->fetchAll();
 									<a style="color: #14FFFF;" href="gallery.php?page=' . $prev . '">' .  '❮' . '</a>';
 								echo '<a style="color: #14FFFF;" href="gallery.php?page=' . $next . '">' .  '❯' . '</a>
 								</div>  ';
-							} elseif ($page == $number_of_pages && $page > 1) {
+							}
+							elseif ($page == $number_of_pages && $page > 1) {
 								echo	'<div class="pagination">
 									<a style="color: #14FFFF;" href="gallery.php?page=' . $prev . '">' .  '❮' . '</a>';
 							}
