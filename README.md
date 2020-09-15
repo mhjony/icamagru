@@ -1,5 +1,5 @@
 # camagru
-Camagru, allows users to upload/capture photos with webcam and apply filters to the image. Also users can like, comment on photo. Hosted version of this project is available [here](https://icamagru.herokuapp.com/)
+Camagru, allows users to upload/capture photos with webcam and apply filters to the image. Also users can like, comment on photo. Hosted version of this project is available [here](https://test-camagru.herokuapp.com/)
 
 # installation instructions
 1. A web server with PHP support e.g. mamp <br />
